@@ -12,6 +12,7 @@ class ViewController: UIViewController,CLLocationManagerDelegate {
     
     let locationManager = CLLocationManager()
     
+
     @IBOutlet weak var locationDetail: UILabel!
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var Coordinate: UILabel!
@@ -20,11 +21,13 @@ class ViewController: UIViewController,CLLocationManagerDelegate {
         self.locationManager.delegate = self
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
         self.locationManager.requestAlwaysAuthorization()
+        mapView.hidden = true
         
         // Do any additional setup after loading the view, typically from a nib.
     }
     
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
+        println("location here")
         CLGeocoder().reverseGeocodeLocation(manager.location, completionHandler: { (placemarks, error) -> Void in
             if error != nil{
                 println("Error")
@@ -64,7 +67,8 @@ class ViewController: UIViewController,CLLocationManagerDelegate {
         println("Error")
     }
     
-    @IBAction func updateLocation(sender: UIButton) {
+    @IBAction func update(sender: AnyObject) {
+        println("here")
         self.locationManager.startUpdatingLocation()
     }
     

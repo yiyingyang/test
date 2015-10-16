@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -16,15 +17,75 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="unk-GS-Kfv">
-                                <rect key="frame" x="246" y="229" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="PMT-ME-JlJ">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="422"/>
+                            </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9GX-Bc-3J3">
+                                <rect key="frame" x="16" y="436" width="129" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="b1G-Lr-6qE"/>
+                                    <constraint firstAttribute="width" constant="129" id="dRW-iD-k73"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coordidate" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S9m-pG-shx">
+                                <rect key="frame" x="16" y="488" width="568" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="6fP-rV-OAp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Street Address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6IL-UX-BMu">
+                                <rect key="frame" x="16" y="459" width="568" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="NIU-Tz-gvc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gHs-PR-WHu">
+                                <rect key="frame" x="275" y="562" width="51" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="HE0-3X-Xu7"/>
+                                    <constraint firstAttribute="width" constant="51" id="bap-0J-Whg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="Update">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="update:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wDd-tW-OUA"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="6IL-UX-BMu" firstAttribute="top" secondItem="9GX-Bc-3J3" secondAttribute="bottom" constant="2" id="0sj-hQ-baX"/>
+                            <constraint firstItem="6IL-UX-BMu" firstAttribute="leading" secondItem="S9m-pG-shx" secondAttribute="leading" id="5Zq-wu-lms"/>
+                            <constraint firstItem="PMT-ME-JlJ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="66e-BB-SDc"/>
+                            <constraint firstAttribute="trailing" secondItem="PMT-ME-JlJ" secondAttribute="trailing" id="DAY-GH-T9p"/>
+                            <constraint firstItem="S9m-pG-shx" firstAttribute="top" secondItem="6IL-UX-BMu" secondAttribute="bottom" constant="8" symbolic="YES" id="IyS-72-M17"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="gHs-PR-WHu" secondAttribute="bottom" constant="8" symbolic="YES" id="LJh-vA-Odt"/>
+                            <constraint firstItem="PMT-ME-JlJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="V6f-N5-NZd"/>
+                            <constraint firstItem="gHs-PR-WHu" firstAttribute="centerX" secondItem="S9m-pG-shx" secondAttribute="centerX" id="XE2-ad-Y28"/>
+                            <constraint firstItem="S9m-pG-shx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="cDc-vf-kek"/>
+                            <constraint firstItem="gHs-PR-WHu" firstAttribute="top" secondItem="S9m-pG-shx" secondAttribute="bottom" constant="53" id="lVR-kQ-vHz"/>
+                            <constraint firstItem="6IL-UX-BMu" firstAttribute="centerX" secondItem="PMT-ME-JlJ" secondAttribute="centerX" id="lf5-fI-vNC"/>
+                            <constraint firstItem="6IL-UX-BMu" firstAttribute="leading" secondItem="9GX-Bc-3J3" secondAttribute="leading" id="qDf-zO-4cd"/>
+                            <constraint firstItem="9GX-Bc-3J3" firstAttribute="top" secondItem="PMT-ME-JlJ" secondAttribute="bottom" constant="14" id="vGC-92-FY5"/>
+                            <constraint firstItem="6IL-UX-BMu" firstAttribute="trailing" secondItem="S9m-pG-shx" secondAttribute="trailing" id="vag-QV-7sQ"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="Coordinate" destination="S9m-pG-shx" id="z5S-V0-63J"/>
+                        <outlet property="locationDetail" destination="6IL-UX-BMu" id="tkC-5v-IRi"/>
+                        <outlet property="mapView" destination="PMT-ME-JlJ" id="mAo-li-dvq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

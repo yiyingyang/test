@@ -13,6 +13,7 @@
 		6A5185711BD07998004B757D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A5185701BD07998004B757D /* Images.xcassets */; };
 		6A5185741BD07998004B757D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A5185721BD07998004B757D /* LaunchScreen.xib */; };
 		6A5185801BD07998004B757D /* testTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A51857F1BD07998004B757D /* testTests.swift */; };
+		6AD3E7621BD08AA40075956B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD3E7611BD08AA40075956B /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		6A5185791BD07998004B757D /* testTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = testTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A51857E1BD07998004B757D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6A51857F1BD07998004B757D /* testTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testTests.swift; sourceTree = "<group>"; };
+		6AD3E7611BD08AA40075956B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6AD3E7621BD08AA40075956B /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +62,7 @@
 		6A51855B1BD07998004B757D = {
 			isa = PBXGroup;
 			children = (
+				6AD3E7611BD08AA40075956B /* MapKit.framework */,
 				6A5185661BD07998004B757D /* test */,
 				6A51857C1BD07998004B757D /* testTests */,
 				6A5185651BD07998004B757D /* Products */,
@@ -411,6 +415,7 @@
 				6A5185851BD07998004B757D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6A5185861BD07998004B757D /* Build configuration list for PBXNativeTarget "testTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +424,7 @@
 				6A5185881BD07998004B757D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
